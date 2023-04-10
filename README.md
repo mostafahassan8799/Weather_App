@@ -1,6 +1,6 @@
 # weathers
 
-A new Flutter project.
+A Weather app which tells you weather state and forecast.
 
 ## Getting Started
 
