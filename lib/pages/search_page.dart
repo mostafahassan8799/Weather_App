@@ -10,7 +10,7 @@ class SearchPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Search Page"),
+        title: Text("Search"),
       ),
       body: Center(
         child: Padding(
@@ -26,15 +26,16 @@ class SearchPage extends StatelessWidget {
             ),
             style: TextStyle(fontSize: 16),
             cursorColor: Colors.orange,
-            onSubmitted: (data) async{
-              cityName=data;
+            onSubmitted: (data) async {
+              cityName = data;
               WeatherService service = WeatherService();
               WeatherModel weather = await service.getWeather(cityName!);
-              Provider.of<WeatherProvider>(context, listen: false).weatherData = weather;
-              Provider.of<WeatherProvider>(context, listen: false).cityName = cityName;
+              Provider.of<WeatherProvider>(context, listen: false).weatherData =
+                  weather;
+              Provider.of<WeatherProvider>(context, listen: false).cityName =
+                  cityName;
               Navigator.pop(context);
               print(weather);
-
             },
           ),
         ),
